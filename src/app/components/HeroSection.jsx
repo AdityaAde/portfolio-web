@@ -10,7 +10,7 @@ const HeroSection = () => {
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <div className="col-span-7 place-self-center text-center sm:text-left">
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold ">
+          <h1 className="text-white mb-4 text-4xl sm:text-4xl lg:text-6xl font-extrabold ">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
               Hello, I'm{" "}
             </span>
@@ -23,10 +23,10 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
-            consequuntur est dolores commodi magnam voluptas nisi perspiciatis
-            libero fugiat ipsum, unde adipisci porro esse impedit et. Unde quod
-            ex debitis.
+            I'm Flutter Developer with 3 years of experience developing iOS and
+            Android applications using Flutter. I have a strong passion for
+            mobile development. Always keen to learn new skills and improve my
+            code to more developing on mobile apps.
           </p>
           <div>
             <button className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white px-6 py-3 rounded-full mr-4">
