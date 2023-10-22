@@ -53,8 +53,8 @@ const AboutSection = () => {
   return (
     <section className="text-white">
       <div className="md:grid md:grid-cols-2 gap-8 sm:py-16 ">
-        <Image src="/images/about.png" height={500} width={500} />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        <Image src="/images/tourist-person.png" height={700} width={500} />
+        <div>
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
             I'm Flutter Developer with 3 years of experience developing iOS and
