@@ -57,8 +57,8 @@ const AboutSection = () => {
         <div>
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I'm Flutter Developer with 3 years of experience developing iOS and
-            Android applications using Flutter. I have a strong passion for
+            I&apos;m Flutter Developer with 3 years of experience developing iOS
+            and Android applications using Flutter. I have a strong passion for
             mobile development. I am a team player and I am excited to work with
             others to create amazing applications. Always keen to learn new
             skills and improve my code to more developing on mobile apps.
