@@ -1,98 +1,124 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
+import { motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
+    title: "CAMP",
+    description: "Project PT.Komuniatas Karya Transformasi",
     image: "/images/projects/camp.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Mobile"],
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
-    image: "/images/projects/cuit.png",
-    tag: ["All", "Web"],
+    title: "Cocoride",
+    description: "PT.Bagubagu Teknologi Indonesia",
+    image: "/images/projects/cocoride.png",
+    tag: ["All", "Mobile"],
   },
+
   {
     id: 3,
-    title: "React Portfolio Website",
-    description: "Project 3 description",
-    image: "/images/projects/camp.png",
+    title: "Buzzco",
+    description: "Project PT.Tri Digital Perkasa",
+    image: "/images/projects/buzzco.png",
     tag: ["All", "Mobile"],
   },
   {
     id: 4,
-    title: "Potography Portfolio Website",
-    description: "Project 4 description",
-    image: "/images/projects/cuit.png",
-    tag: ["All", "Web"],
+    title: "Elit-mtrading",
+    description: "PT.Erdikha Elit Sekuritas",
+    image: "/images/projects/elit.png",
+    tag: ["All", "Mobile"],
   },
+
   {
     id: 5,
-    title: "React Portfolio Website",
-    description: "Project 5 description",
-    image: "/images/projects/camp.png",
-    tag: ["All", "Web"],
+    title: "Plant Sensors",
+    description: "Skripsi",
+    image: "/images/projects/plant-sensors.png",
+    tag: ["All", "Mobile"],
   },
   {
     id: 6,
-    title: "Potography Portfolio Website",
-    description: "Project 6 description",
+    title: "CUiT",
+    description: "Project PT.Tri Digital Perkasa",
     image: "/images/projects/cuit.png",
+    tag: ["All", "Mobile"],
+  },
+  {
+    id: 7,
+    title: "My Qur'an",
+    description: "Project Personal",
+    image: "/images/projects/my-quran.png",
     tag: ["All", "Mobile"],
   },
 ];
 
-const ProjectSection = () => {
+const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
-
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
 
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
+
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
   return (
-    <>
+    <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
-      <div className="flex flex-row justify-center items-center gap-2 text-white my-6">
+      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
-          name="All"
           onClick={handleTagChange}
+          name="All"
           isSelected={tag === "All"}
         />
         <ProjectTag
-          name="Web"
           onClick={handleTagChange}
+          name="Web"
           isSelected={tag === "Web"}
         />
         <ProjectTag
-          name="Mobile"
           onClick={handleTagChange}
-          isSelected={tag == "Mobile"}
+          name="Mobile"
+          isSelected={tag === "Mobile"}
         />
       </div>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.image}
-          />
+          <motion.li
+            key={index}
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 0.3, delay: index * 0.4 }}>
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            />
+          </motion.li>
         ))}
-      </div>
-    </>
+      </ul>
+    </section>
   );
 };
 
-export default ProjectSection;
+export default ProjectsSection;
