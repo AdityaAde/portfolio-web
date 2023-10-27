@@ -56,6 +56,13 @@ const projectsData = [
     image: "/images/projects/my-quran.png",
     tag: ["All", "Mobile"],
   },
+  {
+    id: 8,
+    title: "Tenaga Kerja Indonesia",
+    description: "Skripsi",
+    image: "/images/projects/skripsi-apjati.png",
+    tag: ["All", "Web"],
+  },
 ];
 
 const ProjectsSection = () => {
