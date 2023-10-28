@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import DownloadButton from "./DownloadButton";
 
 const HeroSection = () => {
   return (
@@ -34,9 +35,7 @@ const HeroSection = () => {
             perspiciatis reprehenderit nihil officia aspernatur?
           </p>
           <div>
-            <button className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white px-6 py-3 rounded-full mr-4">
-              Download CV
-            </button>
+            <DownloadButton />
           </div>
         </motion.div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">

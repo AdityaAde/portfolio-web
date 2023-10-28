@@ -22,18 +22,30 @@ const SosmedSection = () => {
           try my best to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
+          <a
+            href="https://github.com/AdityaAde"
+            target="_blank"
+            rel="noopener noreferrer">
             <Image src={GithubIcon} />
-          </Link>
-          <Link href="linkedin.com">
+          </a>
+          <a
+            href="https://linkedin.com/in/adityaade"
+            target="_blank"
+            rel="noopener noreferrer">
             <Image src={LinkedinIcon} />
-          </Link>
-          <Link href="instagram.com">
-            <Image src={InstagramIcon} height={43} />
-          </Link>
-          <Link href="whatsapp.com">
-            <Image src={WhatsappIcon} height={43} />
-          </Link>
+          </a>
+          <a
+            href="https://instagram.com/adityad49_/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <Image src={InstagramIcon} />
+          </a>
+          <a
+            href="https://wa.me/62895361427482"
+            target="_blank"
+            rel="noopener noreferrer">
+            <Image src={WhatsappIcon} />
+          </a>
         </div>
       </div>
       <div>
